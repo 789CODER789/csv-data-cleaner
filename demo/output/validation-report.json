@@ -1,0 +1,81 @@
+{
+  "source_file": "sample_input.csv",
+  "required_columns": [
+    "record_id",
+    "name",
+    "email",
+    "status"
+  ],
+  "duplicate_columns": [
+    "record_id"
+  ],
+  "summary": {
+    "input_records": 13,
+    "accepted_records": 7,
+    "rejected_records": 6,
+    "duplicate_records": 1
+  },
+  "rejected_rows": [
+    {
+      "row_number": 5,
+      "reason": "empty required fields: email",
+      "row": {
+        "record_id": "SYN-004",
+        "name": "Delta Example",
+        "email": "",
+        "status": "active",
+        "notes": "Missing required email"
+      }
+    },
+    {
+      "row_number": 6,
+      "reason": "empty required fields: name",
+      "row": {
+        "record_id": "SYN-005",
+        "name": "",
+        "email": "epsilon@example.invalid",
+        "status": "pending",
+        "notes": "Missing required name"
+      }
+    },
+    {
+      "row_number": 8,
+      "reason": "duplicate key: record_id",
+      "row": {
+        "record_id": "SYN-006",
+        "name": "Zeta Duplicate",
+        "email": "zeta.duplicate@example.invalid",
+        "status": "active",
+        "notes": "Duplicate record_id"
+      }
+    },
+    {
+      "row_number": 9,
+      "reason": "empty required fields: status",
+      "row": {
+        "record_id": "SYN-007",
+        "name": "Eta Example",
+        "email": "eta@example.invalid",
+        "status": "",
+        "notes": "Missing required status"
+      }
+    },
+    {
+      "row_number": 13,
+      "reason": "malformed row: expected 5 columns, got 6",
+      "row": [
+        "SYN-011",
+        "Lambda Example",
+        "lambda@example.invalid",
+        "active",
+        "Unexpected extra column",
+        "EXTRA"
+      ]
+    },
+    {
+      "row_number": 14,
+      "reason": "malformed row: expected 5 columns, got 0",
+      "row": []
+    }
+  ]
+}

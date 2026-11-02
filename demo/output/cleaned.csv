@@ -1,0 +1,8 @@
+record_id,name,email,status,notes
+SYN-001,Alpha Example,alpha@example.invalid,active,Valid synthetic row
+SYN-002,Beta Example,beta@example.invalid,pending,Whitespace is trimmed
+SYN-003,Gamma Example,gamma@example.invalid,active,Valid synthetic row
+SYN-006,Zeta Example,zeta@example.invalid,active,Valid synthetic row
+SYN-008,Theta Example,theta@example.invalid,active,Valid synthetic row
+SYN-009,Iota Example,iota@example.invalid,pending,Valid synthetic row
+SYN-010,Kappa Example,kappa@example.invalid,active,Valid synthetic row

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Validation Report</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 1000px; margin: 2rem auto; padding: 0 1rem; color: #172033; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccd3df; padding: .55rem; text-align: left; vertical-align: top; }
+    th { background: #eef2f7; }
+    code { white-space: pre-wrap; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>CSV Validation Report</h1>
+  <ul>
+    <li>Input records: 13</li>
+    <li>Accepted records: 7</li>
+    <li>Rejected records: 6</li>
+    <li>Duplicate records: 1</li>
+  </ul>
+  <h2>Rejected rows</h2>
+  <table>
+    <thead><tr><th>Source row</th><th>Reason</th><th>Row data</th></tr></thead>
+    <tbody><tr><td>5</td><td>empty required fields: email</td><td><code>{&quot;record_id&quot;: &quot;SYN-004&quot;, &quot;name&quot;: &quot;Delta Example&quot;, &quot;email&quot;: &quot;&quot;, &quot;status&quot;: &quot;active&quot;, &quot;notes&quot;: &quot;Missing required email&quot;}</code></td></tr><tr><td>6</td><td>empty required fields: name</td><td><code>{&quot;record_id&quot;: &quot;SYN-005&quot;, &quot;name&quot;: &quot;&quot;, &quot;email&quot;: &quot;epsilon@example.invalid&quot;, &quot;status&quot;: &quot;pending&quot;, &quot;notes&quot;: &quot;Missing required name&quot;}</code></td></tr><tr><td>8</td><td>duplicate key: record_id</td><td><code>{&quot;record_id&quot;: &quot;SYN-006&quot;, &quot;name&quot;: &quot;Zeta Duplicate&quot;, &quot;email&quot;: &quot;zeta.duplicate@example.invalid&quot;, &quot;status&quot;: &quot;active&quot;, &quot;notes&quot;: &quot;Duplicate record_id&quot;}</code></td></tr><tr><td>9</td><td>empty required fields: status</td><td><code>{&quot;record_id&quot;: &quot;SYN-007&quot;, &quot;name&quot;: &quot;Eta Example&quot;, &quot;email&quot;: &quot;eta@example.invalid&quot;, &quot;status&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Missing required status&quot;}</code></td></tr><tr><td>13</td><td>malformed row: expected 5 columns, got 6</td><td><code>[&quot;SYN-011&quot;, &quot;Lambda Example&quot;, &quot;lambda@example.invalid&quot;, &quot;active&quot;, &quot;Unexpected extra column&quot;, &quot;EXTRA&quot;]</code></td></tr><tr><td>14</td><td>malformed row: expected 5 columns, got 0</td><td><code>[]</code></td></tr></tbody>
+  </table>
+</body>
+</html>
